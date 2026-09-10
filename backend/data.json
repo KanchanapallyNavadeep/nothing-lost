@@ -1,0 +1,60 @@
+{
+    "lost_items": [
+        {
+            "id": 1,
+            "description": "Black leather wallet lost near library",
+            "category": "wallet",
+            "color": "black",
+            "image": "images/lost_wallet (1).jpg",
+            "latitude": 17.436,
+            "longitude": 78.344
+        }
+    ],
+    "found_items": [
+        {
+            "id": 101,
+            "description": "Black leather wallet found near library",
+            "category": "wallet",
+            "color": "black",
+            "image": "images/found_wallet (1).jpg",
+            "latitude": 17.437,
+            "longitude": 78.345
+        },
+        {
+            "id": 102,
+            "description": "Blue backpack found near college gate",
+            "category": "backpack",
+            "color": "blue",
+            "image": null,
+            "latitude": 17.44,
+            "longitude": 78.35
+        },
+        {
+            "id": 103,
+            "description": "Black leather wallet found near library",
+            "category": "wallet",
+            "color": "black",
+            "image": "images/found_wallet (1).jpg",
+            "latitude": 17.437,
+            "longitude": 78.345
+        },
+        {
+            "id": 104,
+            "description": "Black leather wallet found near library",
+            "category": "wallet",
+            "color": "Black",
+            "image": "images/found_wallet (1).jpg",
+            "latitude": 17.437,
+            "longitude": 78.345
+        },
+        {
+            "id": 104,
+            "description": "Black leather wallet lost near library",
+            "category": "wallet",
+            "color": "Black",
+            "image": "uploads/found\\lost_wallet (1).jpg",
+            "latitude": 17.437,
+            "longitude": 78.345
+        }
+    ]
+}

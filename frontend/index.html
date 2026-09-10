@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nothing Lost | AI Lost & Found</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span>◈</span> Nothing Lost
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#report">Report</a>
+            <a href="#how">How It Works</a>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ✦ AI POWERED LOST & FOUND
+                </div>
+
+                <h1>
+                    Lost something?
+                    <span>Let's find it.</span>
+                </h1>
+
+                <p>
+                    Nothing Lost uses AI to compare images, descriptions,
+                    locations and item attributes to find the most likely
+                    match.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn"
+                            onclick="showForm('lost')">
+                        🔍 I Lost Something
+                    </button>
+
+                    <button class="secondary-btn"
+                            onclick="showForm('found')">
+                        📦 I Found Something
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="item-icon">
+                    👛
+                </div>
+
+                <h3>AI Match Detected</h3>
+
+                <div class="match-score">
+                    85.21%
+                </div>
+
+                <p>Black leather wallet</p>
+
+                <div class="match-details">
+                    <span>🖼 Image</span>
+                    <span>📝 Text</span>
+                    <span>📍 Location</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORT FORMS -->
+
+        <section class="forms-section" id="report">
+
+            <div class="section-heading">
+
+                <span>REPORT AN ITEM</span>
+
+                <h2>Tell us what happened</h2>
+
+                <p>
+                    Provide the details and our AI will help find a match.
+                </p>
+
+            </div>
+
+
+            <div class="form-container">
+
+
+                <!-- LOST ITEM -->
+
+                <div class="item-form" id="lostForm">
+
+                    <div class="form-icon">
+                        🔍
+                    </div>
+
+                    <h2>Report Lost Item</h2>
+
+                    <p class="form-description">
+                        Tell us about the item you lost.
+                    </p>
+
+                    <form onsubmit="submitLostItem(event)">
+
+                        <label>Description</label>
+
+                        <textarea
+                            id="lostDescription"
+                            placeholder="Example: Black leather wallet lost near library"
+                            required></textarea>
+
+
+                        <label>Category</label>
+
+                        <select id="lostCategory" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="wallet">Wallet</option>
+                            <option value="phone">Phone</option>
+                            <option value="bag">Bag</option>
+                            <option value="backpack">Backpack</option>
+                            <option value="keys">Keys</option>
+                            <option value="documents">Documents</option>
+                            <option value="other">Other</option>
+
+                        </select>
+
+
+                        <label>Color</label>
+
+                        <input
+                            type="text"
+                            id="lostColor"
+                            placeholder="Example: Black"
+                            required>
+
+
+                       <label>Item Photo</label>
+
+<input
+    type="file"
+    id="lostImage"
+    accept="image/*">
+
+
+                        <div class="location-grid">
+
+                            <div>
+
+                                <label>Latitude</label>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    id="lostLatitude"
+                                    placeholder="17.4360"
+                                    required>
+
+                            </div>
+
+
+                            <div>
+
+                                <label>Longitude</label>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    id="lostLongitude"
+                                    placeholder="78.3440"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn full-btn">
+
+                            🤖 Find AI Matches
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- FOUND ITEM -->
+
+                <div class="item-form" id="foundForm">
+
+                    <div class="form-icon">
+                        📦
+                    </div>
+
+                    <h2>Register Found Item</h2>
+
+                    <p class="form-description">
+                        Tell us about an item you found.
+                    </p>
+
+                    <form onsubmit="submitFoundItem(event)">
+
+                        <label>Item ID</label>
+
+                        <input
+                            type="number"
+                            id="foundId"
+                            placeholder="Example: 104"
+                            required>
+
+
+                        <label>Description</label>
+
+                        <textarea
+                            id="foundDescription"
+                            placeholder="Example: Black wallet found near library"
+                            required></textarea>
+
+
+                        <label>Category</label>
+
+                        <select id="foundCategory" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="wallet">Wallet</option>
+                            <option value="phone">Phone</option>
+                            <option value="bag">Bag</option>
+                            <option value="backpack">Backpack</option>
+                            <option value="keys">Keys</option>
+                            <option value="documents">Documents</option>
+                            <option value="other">Other</option>
+
+                        </select>
+
+
+                        <label>Color</label>
+
+                        <input
+                            type="text"
+                            id="foundColor"
+                            placeholder="Example: Black"
+                            required>
+
+
+                        <label>Item Photo</label>
+
+<input
+    type="file"
+    id="foundImage"
+    accept="image/*">
+
+                        <div class="location-grid">
+
+                            <div>
+
+                                <label>Latitude</label>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    id="foundLatitude"
+                                    placeholder="17.4370"
+                                    required>
+
+                            </div>
+
+
+                            <div>
+
+                                <label>Longitude</label>
+
+                                <input
+                                    type="number"
+                                    step="any"
+                                    id="foundLongitude"
+                                    placeholder="78.3450"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="secondary-btn full-btn">
+
+                            📦 Register Found Item
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="how-section" id="how">
+
+            <div class="section-heading">
+
+                <span>HOW IT WORKS</span>
+
+                <h2>From lost to found</h2>
+
+                <p>
+                    Our system combines multiple signals instead of relying
+                    on just a description.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>Report</h3>
+
+                    <p>
+                        Tell us what you lost or found and provide useful
+                        details.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>AI Analysis</h3>
+
+                    <p>
+                        AI analyzes image, text, location and item attributes.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>Get Matches</h3>
+
+                    <p>
+                        Receive ranked results based on the calculated
+                        similarity score.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <section class="status-section">
+
+            <div id="statusMessage"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Nothing Lost — AI Lost & Found Matcher
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
